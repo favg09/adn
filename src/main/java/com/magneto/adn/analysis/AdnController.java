@@ -40,7 +40,7 @@ public class AdnController {
 
 	@SuppressWarnings("unchecked")
 	@Transactional(rollbackFor=Exception.class)
-	private void processAdn(HashMap<String, Object> map) {
+	private void processAdn(HashMap<String, Object> map) throws GeneralAdnException{
 		ArrayList<String> dnaList =  (ArrayList<String>) map.get("dna");
 	    String[] dnaArray = new String[dnaList.size()];
 	    dnaArray = dnaList.toArray(dnaArray);
@@ -50,23 +50,17 @@ public class AdnController {
 	    }
 	    
 	    if(dnaArray.length > 0) {
-	    	try {
-	    		
-			    if(isMutant(dnaArray)) {
-			    	//save into DB
-			    	Adn adn = new Adn(sb.toString(), 0);
-			    	repo.save(adn);
-			    	throw new NotMutantException();
-			    }
-			    else {
-			    	//save into DB
-			    	Adn adn = new Adn(sb.toString(), 1);
-			    	repo.save(adn);
-			    }
-	    	}catch(Exception e) {
-	    		throw new GeneralAdnException();
-	    	}
-
+		    if(isMutant(dnaArray)) {
+		    	//save into DB
+		    	Adn adn = new Adn(sb.toString(), 0);
+		    	repo.save(adn);
+		    	throw new NotMutantException();
+		    }
+		    else {
+		    	//save into DB
+		    	Adn adn = new Adn(sb.toString(), 1);
+		    	repo.save(adn);
+		    }
 	    }
 	}
 	
