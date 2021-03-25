@@ -29,7 +29,7 @@ public class AdnResponse {
 			return Double.valueOf(df2.format(count_mutant_dna / count_human_dna));
 		}
 		else
-			return 0.0;
+			return 1.0;
 	}
 
 }
