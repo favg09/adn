@@ -2,12 +2,12 @@
 
 ## Pasos para la ejecución del proyecto
 
-1. Descargue el programa desde github 
+1. Clone el siguiente repositorio y ubiquese en el branch "develop"
 ```
 https://github.com/favg09/adn
 ```
 
-2. Una vez descargado, éste puede ser importado en su IDE (p.e. Eclipse) como un proyecto maven. (Este paso no es mandatorio)
+2. Una vez descargado, éste puede ser importado en su IDE (p.e. Eclipse) como un proyecto maven.
 
 3. Compile el proyecto usando el comando:
 ```
@@ -21,6 +21,7 @@ o utilice el build de su IDE. (Nota: utilice Java 8)
 ```
 http://localhost:8080/mutant
 ```
+o desde una consola de comandos:
 ```
 curl --location --request POST 'http://localhost:8080/mutant' \
 --header 'Content-Type: application/json' \
@@ -45,6 +46,7 @@ La respuesta en caso de verificar un mutante será un HTTP 200-OK, en caso contr
 http://localhost:8080/stats
 (No parametros)
 ```
+o desde una consola de comandos:
 ```
 curl --location --request POST 'http://localhost:8080/stats'
 ```
@@ -60,6 +62,7 @@ La respuesta será un JSon con el siguiente formato:
 ```
 https://green-analog-308419.rj.r.appspot.com/mutant
 ```
+o desde una consola de comandos:
 ```
 curl --location --request POST 'https://green-analog-308419.rj.r.appspot.com/mutant' \
 --header 'Content-Type: application/json' \
@@ -71,14 +74,16 @@ curl --location --request POST 'https://green-analog-308419.rj.r.appspot.com/mut
 ```
 https://green-analog-308419.rj.r.appspot.com/stats
 ```
+o desde una consola de comandos:
 ```
 curl --location --request POST 'https://green-analog-308419.rj.r.appspot.com/stats' \
 --data-raw ''
 ```
 
+
 ## Comentarios adicionales
 
-- El algoritmo que analiza el ADN para las consultas que tieneN que ver con las diagonales de la matriz, solamente las realiza sobre las 2 diagonales mayores de la matriz (X):
+- El algoritmo que analiza el ADN para las consultas que tienen que ver con las diagonales de la matriz, sólamente las realiza sobre las dos diagonales mayores de la matriz, por ejemplo (X):
 ```
 X O X
 O X O
