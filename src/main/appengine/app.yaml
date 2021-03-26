@@ -9,3 +9,6 @@ handlers:
 
 readiness_check:
   app_start_timeout_sec: 1500
+
+env_variables:
+  ENCRYPT_KEY: mykey
