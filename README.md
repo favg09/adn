@@ -80,6 +80,19 @@ curl --location --request POST 'https://green-analog-308419.rj.r.appspot.com/sta
 --data-raw ''
 ```
 
+## Setup Base de Datos MySQL
+```
+CREATE DATABASE `magnetodb` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+CREATE TABLE `adn` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `adnsec` varchar(256) NOT NULL,
+  `human` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+
+```
+
 
 ## Comentarios adicionales
 
@@ -93,5 +106,38 @@ X O X
 - No se alcanzan a realizar los test. Se deja instalado el plugin de Jacoco y se hace un test de prueba
 
 
+## Algunos comando útiles
 
- 
+### Git
+```
+git clone https://github.com/favg09/mutant
+git checkout -b develop
+git fetch origin
+git pull origin develop
+git push origin develop
+git stash
+git stash apply
+git log -3
+```
+
+### Maven
+```
+mvn clean compile
+mvn clean package
+```
+
+### Google Cloud
+
+Información del proyecto
+Nombre del proyecto
+Mutant
+ID de proyecto
+green-analog-308419
+Número del proyecto
+538923975057
+
+```
+gcloud sql connect magnetodb --user=sqltest
+mvn clean package appengine:deploy
+mvn appengine:run
+```
