@@ -80,7 +80,7 @@
 				<version>${appengine-maven-plugin-version}</version>
                 <configuration>
                     <deploy.projectId>green-analog-308419</deploy.projectId>
-                    <deploy.version>2</deploy.version>
+                    <deploy.version>6</deploy.version>
                 </configuration>
 			</plugin>
 			<plugin>
