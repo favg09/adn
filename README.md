@@ -41,7 +41,7 @@ POST → /mutant/
 
 La respuesta en caso de verificar un mutante será un HTTP 200-OK, en caso contrario un 403-Forbidden
 
-6. Cada vez que se invoque el servicio /mutant/, se almacenará en la base de datos el resultado del analisis realizado sobre el ADN. La estadisticas puedes ser consultadas mediante el siguiente servicio:
+6. Cada vez que se invoque el servicio /mutant/, se almacenará en la base de datos el resultado del analisis realizado sobre el ADN. Las estadisticas pueden ser consultadas mediante el siguiente servicio:
 ```
 http://localhost:8080/stats
 (No parametros)
@@ -51,7 +51,7 @@ o desde una consola de comandos:
 curl --location --request POST 'http://localhost:8080/stats'
 ```
 
-La respuesta será un JSon con el siguiente formato:
+La respuesta será un JSON con el siguiente formato:
 {
     "count_mutant_dna": 2.0,
     "count_human_dna": 4.0,
