@@ -109,6 +109,7 @@ X O X
 ## Algunos comando útiles
 
 ### Git
+
 ```
 git clone https://github.com/favg09/mutant
 git checkout -b develop
@@ -121,6 +122,7 @@ git log -3
 ```
 
 ### Maven
+
 ```
 mvn clean compile
 mvn clean package
@@ -129,12 +131,12 @@ mvn clean package
 ### Google Cloud
 
 Información del proyecto
-Nombre del proyecto
-Mutant
-ID de proyecto
-green-analog-308419
-Número del proyecto
-538923975057
+
+```
+Nombre del proyecto: Mutant
+ID de proyecto: green-analog-308419
+Número del proyecto: 538923975057
+```
 
 ```
 gcloud sql connect magnetodb --user=sqltest
